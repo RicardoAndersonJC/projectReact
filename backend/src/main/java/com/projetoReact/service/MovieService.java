@@ -22,4 +22,9 @@ public class MovieService {
       Page<MoviesDto> page = result.map(x -> new MoviesDto(x));
       return page;
     }
+    public MoviesDto findById(Long id){
+        Movies result = movieRepository.findById(id).get();
+        MoviesDto page =  new MoviesDto(result);
+        return page;
+    }
 }
