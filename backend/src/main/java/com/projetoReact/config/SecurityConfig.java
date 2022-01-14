@@ -31,7 +31,7 @@ import java.util.Arrays;
 
             http.cors().and().csrf().disable();
             http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-            http.authorizeRequests().anyRequest().permitAll();
+            http.authorizeRequests().antMatchers("/","/**").permitAll();
         }
 
         @Bean
