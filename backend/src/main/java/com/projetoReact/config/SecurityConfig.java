@@ -3,6 +3,7 @@ package com.projetoReact.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -42,5 +43,7 @@ import java.util.Arrays;
             source.registerCorsConfiguration("/**", configuration);
             return source;
         }
+
+
     }
 
