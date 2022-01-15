@@ -2,6 +2,8 @@ package entities;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -14,7 +16,8 @@ public class Movies {
     private Double score;
     private Integer count;
     private String image;
-
+    @OneToMany(mappedBy = "id.movies")
+    private Set<Score> scores = new HashSet<>();
     public Long getId() {
         return id;
     }
@@ -64,5 +67,13 @@ public class Movies {
     }
 
     public Movies() {
+    }
+
+    public Set<Score> getScores() {
+        return scores;
+    }
+
+    public void setScores(Set<Score> scores) {
+        this.scores = scores;
     }
 }
